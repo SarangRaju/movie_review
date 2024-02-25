@@ -1,0 +1,58 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">Edit Profile</div>
+        <div class="content">
+            <form method="POST" ENCTYPE="multipart/form-data" action="">
+                {%csrf_token%}
+                <div class="user-details">
+                    <div class="input-box">
+                        <label for="Title">Title</label>
+                        {{form.Title}}
+                    </div>
+                    <div class="input-box">
+                        <label for="Year">Year</label>
+                        {{form.Year}}
+                    </div>
+                    <div class="input-box">
+                        <label for="Rated">Rated</label>
+                        {{form.Rated}}
+                    </div>
+                    <div class="input-box">
+                        <label for="Genre">Genre</label>
+                        {{form.Genre}}
+                    </div>
+                    <div class="input-box">
+                        <label for="Actors">Actors</label>
+                        {{form.Actors}}
+                    </div>
+                    <div>
+                        <label for="Plot">Plot</label>
+                        {{form.Plot}}
+                    </div>
+                    <div>
+                        <label for="Poster">Poster</label>
+                        {{form.Poster}}
+                    </div>
+                </div>
+                {% if form.errors %}
+                    {{form.errors}}
+                {%endif%}
+                <div class="button">
+                    <input type="submit" value="Update">
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
